@@ -11,12 +11,12 @@ with st.expander('Data'):
   df
   
   st.write('**X data**')
-  x = df.drop('species',axis = 1)
-  x
+  x_raw = df.drop('species',axis = 1)
+  x_raw
   
   st.write('**Y data**')
-  y = df['species']
-  y
+  y_raw = df['species']
+  x_raw
 
 with st.expander('Data visualization'):
   st.write('**scatter**')
@@ -39,7 +39,7 @@ with st.sidebar:
           'body_mass_g': body_mass_g,
           'sex': gender}
   input_df = pd.DataFrame(data, index=[1])
-  input_penguins = pd.concat([input_df, x], axis=0)
+  input_penguins = pd.concat([input_df, x_raw], axis=0)
 
 with st.expander('Input features'):
   st.write('**Input penguin**')
@@ -62,7 +62,7 @@ target_mapper = {'Adelie': 0,
 def target_encode(val):
   return target_mapper[val]
 
-y = y.apply(target_encode)
+y = y_raw.apply(target_encode)
 
 with st.expander('Data preparation'):
   st.write('**Encoded X (input penguin)**')
