@@ -18,7 +18,7 @@ with st.expander('Data'):
   y = df['species']
   y
 
-with st.expander('Data'):
-  st.write('**RData visualization**')
+with st.expander('Data visualization'):
+  st.write('**scatter**')
   st.scatter_hart(data = df, x = 'bill_length_mm' ,y = 'body_mass_g',color = 'species')
   
