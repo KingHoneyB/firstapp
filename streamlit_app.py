@@ -20,5 +20,5 @@ with st.expander('Data'):
 
 with st.expander('Data visualization'):
   st.write('**scatter**')
-  st.scatter_hart(data = df, x = 'bill_length_mm' ,y = 'body_mass_g',color = 'species')
+  st.scatter_chart(data = df, x = 'bill_length_mm' ,y = 'body_mass_g',color = 'species')
   
