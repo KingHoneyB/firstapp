@@ -1,5 +1,7 @@
 import streamlit as st
+import numpy as np
 import pandas as pd
+from sklearn.ensemble import RandomForestClassifier
 
 st.title('KingHB')
 
@@ -70,3 +72,10 @@ with st.expander('Data preparation'):
   st.write('**Encoded y**')
   y
 
+clf = RandomForestClassifier()
+clf.fit(X,y)
+
+prediction = clf.predict(input_row)
+prediction_prob = clf.predict_proba(input_row)
+
+df_prediction_proba = pd.DataFrame(prediction_proba)
