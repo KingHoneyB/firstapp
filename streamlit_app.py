@@ -38,7 +38,7 @@ with st.sidebar:
           'flipper_length_mm': flipper_length_mm,
           'body_mass_g': body_mass_g,
           'sex': gender}
-  input_df = pd.DataFrame(data, index=[0])
+  input_df = pd.DataFrame(data, index=[1])
   input_penguins = pd.concat([input_df, x], axis=0)
 
 with st.expander('Input features'):
